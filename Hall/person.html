@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Personal information</title>
+<meta charset="utf-8">
+<link rel="stylesheet"   type="text/css"  href="bootstrap.min.css" >
+<link rel="stylesheet"   type="text/css"  href="bootstrap.min.js" >
+<!--script src="bootstrap.min.js></script-->
+<style type="text/css">
+		body
+		{
+			background-image:url("img3.jpg");
+			background-color:white;
+			background-size:cover;
+			width:80%;	
+					
+		}
+		#form
+			{				
+				background:transparent;
+				top:60px;
+				left:85px;
+				position:center;
+				height: 750px;
+				border:1px solid black;
+				border-radius:1px;
+				padding:40px 40px 40px 40px;
+				max-width:1200px;
+			}
+		.registration
+			{
+				font-size:40px;
+				font-family:Times New Roman;
+				font-weight:700;
+				border-bottom-style:;
+			}
+		.text
+			{
+				height:30px;
+				background:transparent;
+				color:black;
+				font-size:16px;
+			}
+		.radio
+			{
+				font-size:16px;
+			}
+			
+		label
+			{
+				font-size:25px;
+			}
+		span
+			{
+				font-size:15px;
+			}
+		.button
+			{
+				top:-50%;
+
+			}	
+		.btn-primary
+			{
+				
+				border:1px solid #fff;
+				padding:10px 40px;
+				margin-right:15px;
+				margin-left:10px;
+				text-decoration:none;
+				color:#fff;
+			}
+		.btn-danger
+                        {
+                              
+				border:1px solid #fff;
+				padding:10px 40px;
+				margin-right:15px;
+				margin-left:10px;
+				text-decoration:none;
+				color:#fff;
+	                }
+</style>
+<script src=jquery.js></script>
+	<script>
+$(document).ready(function()
+		{
+		$("button").click(function(){
+			$("#newcustfrm").slideToggle(1000);	
+
+			});	
+
+		$("#t1").focusout(function(){
+
+			nm=$("#t1").val();
+			//alert(nm);
+
+			pattern=new RegExp(/[^a-zA-Z ]/);
+			//		alert(pattern.test(nm));
+			if(pattern.test(nm))
+			{
+			$("#err_nm").text("Invalid name");
+			$("#err_nm").show(500);
+			}
+			else
+			{
+			$("#err_nm").hide(1000);
+
+			}
+
+			});
+
+		$("#t2").focusout(function(){
+
+				mb=$("#t2").val();
+				pat=new RegExp(/[^0-9]/);
+				pat1=new RegExp(/^(7|8|9)/);
+				if(!pat.test(mb) && pat1.test(mb) && mb.length==10)
+				{
+				$("#err_mb").hide(1000);
+				}
+				else
+				{
+				$("#err_mb").text("Invalid Mobile");
+				$("#err_mb").show(1000);
+				}
+				});
+
+			$("#email").focusout(function(){
+
+				em=$("#email").val();
+				//		alert(em);
+				pattern=new RegExp(/([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})/);
+				//		alert(pattern.test(em));
+				if(!pattern.test(em))
+				{
+				$("#err_email").text("Invalid Email");
+				$("#err_email").show(1000);
+				emailerr=true;
+				}
+				else
+				{
+				$("#err_email").hide(1000);
+				emailerr=false;
+				}			
+				});
+		});
+</script>
+<div class="container">
+<form action=booking1.php method=POST>
+       <h1><div class="form">
+		<div class="col-md-6  col-md-offset-3" id="form">
+			<center><b class="registration">Personal information</b></center>
+				<form>
+					<div class="form-group">
+						<label>Name :</label>
+						<input type="text" name="t1" id="t1" class="form-control text" placeholder="Enter username" autocomplete="off">
+<td><font size=15px><span id=err_nm class="text-danger" font-weight="bold"></font></span></td></div>
+					
+					<div class="form-group">
+                                                <label>Mobile no :</label>
+                                                <input type="text" name="t2" id="t2" class="form-control text" placeholder="Enter mobile number" autocomplete="off">
+<td><span id=err_mb class="text-danger" font-weight="bold"></span></td></div>	
+					
+					<div class="form-group">
+                                                <label>Address :</label>
+                                                <input type="text" name="t3" class="form-control text" placeholder="Enter address" autocomplete="off">
+<td><font-weight="bold"></span></td></div>					
+                                              
+					<div class="form-group">
+                                                <label>Email :</label>
+                                                <input type="text" name="email" id="email" class="form-control text" placeholder="Enter valid email" autocomplete="off">
+<td><span id=err_email class="text-danger" font-weight="bold"></span></td></div>
+					
+
+					<div class="form-group">
+                                          <label>Select Gender :</label></br>
+                                     	  <input type=radio name=t5 value="male">Male<input type=radio name=t5 value="female">Female<br>
+
+					
+					
+					<div class="form-group">
+                                          <label>Security question:</label>
+                                     	  <select name=t6 style="font-size:17px;">
+						<option>Whats your favourite place ?</option>
+						<option>Whats your nickname ?</option>
+						<option>Whats your favourite TV show ?</option>
+					</select>
+
+					<div class="form-group">
+                                                <label>Answer :</label>
+                                                <input type="password" name="t7" class="form-control text" placeholder="Enter your answer" autocomplete="off">
+<td><class="text-danger" font-weight="bold"></span></td></div>
+
+
+					<div class="form-group">
+                                                <input type="submit" class="btn btn-primary" value="Next">
+						 <input type="reset" class="btn btn-danger" value="Reset"></div></div>
+		</h1>		</form>
+
+</div>
+</body>
+</html>
+

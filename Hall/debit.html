@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>RMC college </title>
+<meta charset="utf-8">
+<link rel="stylesheet"   type="text/css"  href="bootstrap.min.css" >
+<!--script src="bootstrap.min.js"></script-->
+<style type="text/css">
+		body
+		{
+			background-image:url("bill1.jpg");
+			background-color:white;
+			background-size:cover;
+			width:80%;	
+					
+		}
+		#form
+			{				
+				background:transparent;
+				top:60px;
+				left:85px;
+				position:center;
+				height:500px;
+				border:1px solid black;
+				border-radius:1px;
+				padding:10px 40px 40px 40px;
+			}
+		.loginbox
+			{
+				font-size:40px;
+				font-family:Times New Roman;
+				font-weight:700;
+				border: bottom style 16px;
+			}
+		.text
+			{
+				height:35px;
+				background:transparent;
+				color:black;
+				font-size:16px;
+			}	
+		label
+			{
+				font-size:25px;
+			}
+		.btn-primary
+			{
+				top:30px;
+				padding:10px;			
+				width:47%;
+			}
+		.btn-danger
+                        {
+                                border-radius:0px;
+                                padding:10px;
+                                width:47%;
+                        }
+
+</style>
+</head>
+<body>
+<div class="container">
+<form action=debit.php method=POST>
+       <h1><div class="form">
+		<div class="col-md-6  col-md-offset-3" id="form">
+			<center><b class="loginbox">Enter debit card details</b></center>
+				<form>
+					
+                                             
+                                                <div class="form-group">
+					<div class="form-group">					
+						<label>Advanced or full amount :</label>
+                                                <input type="text" name="t1" class="form-control text" placeholder="Enter amount" autocomplete="off"></div>
+
+					<div class="form-group">
+                                                <label>Card no:</label>
+                                                <input type="text" name="t2" class="form-control text" placeholder="1111-2222-3333-4444" autocomplete="off"></div>
+
+					<div class="form-group">
+                                                <label>Valid MM/YY:</label>
+                                                <input type="text" name="t3" id="t2" class="form-control text" placeholder="11/22" autocomplete="off">
+
+					<div class="form-group">
+                                                <label>CVV:</label>
+                                                <input type="text" name="t4" id="t3" class="form-control text" placeholder="123" autocomplete="off">
+
+</div>
+					
+                                                
+					<div class="form-group">
+                                                <input type="submit" class="btn btn-primary" value="Pay">
+						 <input type="reset" class="btn btn-danger" value="Reset"></div>
+		</h1>		</form>
+
+</div>
+</body>
+</html>
+

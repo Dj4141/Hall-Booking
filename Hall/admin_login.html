@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>RMC college</title>
+<meta charset="utf-8">
+<link rel="stylesheet"   type="text/css"  href="bootstrap.min.css" >
+<!--script src="bootstrap.min.js"></script-->
+<style type="text/css">
+		body
+		{
+			background-image:url("img3.jpg");
+			background-color:white;
+			background-size:cover;
+			width:80%;	
+					
+		}
+		#form
+			{				
+				background:transparent;
+				top:60px;
+				left:85px;
+				position:center;
+				height:450 px;
+				border:1px solid black;
+				border-radius:1px;
+				padding:10px 40px 40px 40px;
+			}
+		.loginbox
+			{
+				font-size:40px;
+				font-family:Times New Roman;
+				font-weight:700;
+				border: bottom style 16px;
+			}
+		.text
+			{
+				height:35px;
+				background:transparent;
+				color:black;
+				font-size:16px;
+			}	
+		label
+			{
+				font-size:25px;
+			}
+		.btn-primary
+			{
+				top:30px;
+				padding:10px;			
+				width:47%;
+			}
+		.btn-danger
+                        {
+                                border-radius:0px;
+                                padding:10px;
+                                width:47%;
+                        }
+
+</style>
+<script>
+function myFunction() {
+  var x = document.getElementById("t2");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+</head>
+<body>
+<div class="container">
+<form action=admin_login.php method=POST>
+       <h1><div class="form">
+		<div class="col-md-6  col-md-offset-3" id="form">
+			<center><b class="loginbox">Login</b></center>
+				<form>
+					
+                                             
+                                                <div class="form-group">
+                                                <label>Username :</label>
+                                                <input type="text" name="t1" class="form-control text" placeholder="Enter username" autocomplete="off"></div>
+					<div class="form-group">
+                                                <label>Password :</label>
+                                                <input type="password" name="t2" id="t2" class="form-control text" placeholder="Enter password" autocomplete="off">
+<!-- An element to toggle between password visibility -->
+<input type="checkbox" onclick="myFunction()"><font size=5px><B>Show Password</B></font>
+</div>
+					
+                                                
+					<div class="form-group">
+                                                <input type="submit" class="btn btn-primary" value="Log in">
+						 <input type="reset" class="btn btn-danger" value="Reset"></div>
+		</h1>		</form>
+
+</div>
+</body>
+</html>
+

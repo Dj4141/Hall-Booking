@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>RMC college</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"   type="text/css"  href="bootstrap.min.css" >
+<link rel="stylesheet"   type="text/css"  href="bootstrap.min.js" >
+
+<!--script src="bootstrap.min.js></script-->
+<style type="text/css">
+		body
+		{
+			background-image:url("img3.jpg");
+			background-color:white;
+			background-size:cover;
+			width:80%;	
+					
+		}
+		#form
+			{				
+				background:transparent;
+				top:60px;
+				left:85px;
+				position:center;
+				height:850px;
+				border:1px solid black;
+				border-radius:1px;
+				padding:40px 40px 40px 40px;
+				max-width:1200px;
+			}
+		.registration
+			{
+				font-size:40px;
+				font-family:Times New Roman;
+				font-weight:700;
+				border: bottom style 1px;;
+			}
+		.text
+			{
+				height:30px;
+				background:transparent;
+				color:black;
+				font-size:16px;
+			}
+		.radio
+			{
+				font-size:16px;
+			}
+			
+		label
+			{
+				font-size:25px;
+			}
+		span
+			{
+				font-size:15px;
+			}
+		.button
+			{
+				top:-50%;
+
+			}	
+		.btn-primary
+			{
+				
+				border:1px solid #fff;
+				padding:10px 40px;
+				margin-right:15px;
+				margin-left:10px;
+				text-decoration:none;
+				color:#fff;
+			}
+		.btn-danger
+                        {
+                              
+				border:1px solid #fff;
+				padding:10px 40px;
+				margin-right:15px;
+				margin-left:10px;
+				text-decoration:none;
+				color:#fff;
+	                }
+</style>
+<script src=jquery.js></script>
+	<script>
+$(document).ready(function()
+		{
+		$("button").click(function(){
+			$("#newcustfrm").slideToggle(1000);	
+
+			});	
+
+		$("#t1").focusout(function(){
+
+			nm=$("#t1").val();
+			//alert(nm);
+
+			pattern=new RegExp(/[^a-zA-Z ]/);
+			//		alert(pattern.test(nm));
+			if(pattern.test(nm))
+			{
+			$("#err_nm").text("Invalid name");
+			$("#err_nm").show(500);
+			}
+			else
+			{
+			$("#err_nm").hide(1000);
+
+			}
+
+			});
+
+		$("#t2").focusout(function(){
+
+				mb=$("#t2").val();
+				pat=new RegExp(/[^0-9]/);
+				pat1=new RegExp(/^(7|8|9)/);
+				if(!pat.test(mb) && pat1.test(mb) && mb.length==10)
+				{
+				$("#err_mb").hide(1000);
+				}
+				else
+				{
+				$("#err_mb").text("Invalid Mobile Number");
+				$("#err_mb").show(1000);
+				}
+				});
+		$("#un").focusout(function(){
+
+				un=$("#un").val().length;
+				if(un<5)
+				{
+				$("#err_un").text("Username should be minimum 5 characters long");
+				$("#err_un").show(1000);
+				usernameerr=true;
+				}
+				else
+				{
+				$("#err_un").hide(1000);
+				usernameerr=false;
+				}			
+				});
+		$("#email").focusout(function(){
+
+				em=$("#email").val();
+				//		alert(em);
+				pattern=new RegExp(/([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})/);
+				//		alert(pattern.test(em));
+				if(!pattern.test(em))
+				{
+				$("#err_email").text("Invalid Email");
+				$("#err_email").show(1000);
+				emailerr=true;
+				}
+				else
+				{
+				$("#err_email").hide(1000);
+				emailerr=false;
+				}			
+				})
+
+
+		$("#upass").focusout(function(){
+
+				up=$("#upass").val().length;
+				if(up<10)
+				{
+				$("#err_ps").text("Password should be minimum 10 characters long and it contain one special symbol");
+				$("#err_ps").show(1000);
+				passworderr=true;
+				}
+				else
+				{
+				$("#err_ps").hide(1000);
+				passworderr=false;
+				}			
+				});
+
+		
+		$("#ucpass").focusout(function(){
+
+				up=$("#upass").val();
+				ucp=$("#ucpass").val();
+
+
+				if(up!=ucp)
+				{
+				$("#err_upass").text("Password does not Match");
+				$("#err_upass").show(1000);
+				confirmpasserr=true;
+				}
+				else
+				{
+				$("#err_upass").hide(1000);
+				//$("#err_upass").text("Password Match");
+				confirmpasserr=false;
+				}			
+				});
+
+			       $(function () {
+        		        $('#datetimepicker').datetimepicker({
+                	    format: 'LT'
+            		    	});
+            		});
+     
+			
+	});
+		
+</script>
+<body>
+<div class="container">
+<form action=admin_reg.php method=POST>
+       <h1><div class="form">
+		<div class="col-md-6  col-md-offset-3" id="form">
+			<center><b class="registration">User Registration</b></center>
+				<form>
+		
+					<div class="form-group">
+						<label>Name :</label>
+						<input type="text" name="t1" id="t1" class="form-control text" placeholder="Enter username" autocomplete="off">
+<td><font size=15px><span id=err_nm class="text-danger" font-weight="bold"></font></span></td></div>
+					
+					<div class="form-group">
+                                                <label>Mobile no :</label>
+                                                <input type="text" name="t2" id="t2" class="form-control text" placeholder="Enter mobile number" autocomplete="off">
+<td><span id=err_mb class="text-danger" font-weight="bold"></span></td></div>	
+
+					<div class="form-group">
+                                                <label>Date of birth :</label>
+						<input type="date" name="t3"  id="t3" style="font-size:25px;" class="form-control text"> 
+</div>                                               
+					<div class="form-group">
+                                                <label>Email :</label>
+                                                <input type="text" name="email" id="email" class="form-control text" placeholder="Enter valid email" autocomplete="off">
+<td><span id=err_email class="text-danger" font-weight="bold"></span></td></div>
+					<div class="form-group">
+                                                <label>Username :</label>
+                                                <input type="text" name="un" id="un" class="form-control text" placeholder="Enter username" autocomplete="off">
+<td><span id=err_un class="text-danger" font-weight="bold"></span></td></div>
+
+					<div class="form-group">
+                                                <label>Password :</label>
+                                                <input type="password" name="upass" id="upass" class="form-control text" placeholder="Enter password" autocomplete="off">
+<td><span id=err_ps class="text-danger" font-weight-bold></span></td></div>
+
+					<div class="form-group">
+                                                <label>Confirm Password :</label>
+                                                <input type="password" name="ucpass" id="ucpass" class="form-control text" placeholder="Enter password" autocomplete="off">
+<td><span id=err_upass class="text-danger" font-weight="bold"></span></td></div>
+
+					<div class="form-group">
+                                                <label>Select Gender :</label><br>
+                                     	  <input type=radio name=t7 value="male" style="font-size:25px;">Male<input type=radio name=t7  style="font-size:25px;" value="female">Female
+<div class="button">
+					<div class="form-group">
+                                                <input type="submit" class="btn btn-primary" value="Register">
+					<input type="reset" class="btn btn-danger" value="Reset"></div></div>
+					</h1>		
+</form>
+</div>
+</body>
+</html>
+
